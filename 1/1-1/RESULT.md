@@ -1,4 +1,4 @@
-## FGSM Attack Results on MNIST Dataset
+## Targeted FGSM Attack Results on MNIST Dataset
 
 #### Usage
 
