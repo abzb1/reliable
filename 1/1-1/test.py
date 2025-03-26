@@ -108,22 +108,22 @@ train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=
 test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
 
 fgsm_eps = 0
-save_imgs = False
+save_imgs = True
 
 # ViT
 model = VisionTransformer(img_size=28, patch_size=4, num_classes=10, embed_dim=64, depth=6, num_heads=8, mlp_ratio=4.0, dropout=0.1)
-# mnist_train_model(model, train_loader, test_loader, num_epochs=50, lr=0.003, save_path='model_vit.ckpt')
-model.load_state_dict(torch.load('model_vit.ckpt'))
+mnist_train_model(model, train_loader, test_loader, num_epochs=50, lr=0.003, save_path='model_vit.ckpt')
+# model.load_state_dict(torch.load('model_vit.ckpt'))
 batch_fgsm_attack(model, batch_size, test_loader, eps=fgsm_eps, save_imgs=save_imgs, save_dir='imgs/imgs_vit')
 
 # CNN
 model = CNN_300K()
-# mnist_train_model(model, train_loader, test_loader, num_epochs=50, lr=0.003, save_path='model_cnn.ckpt')
-model.load_state_dict(torch.load('model_cnn.ckpt'))
+mnist_train_model(model, train_loader, test_loader, num_epochs=50, lr=0.003, save_path='model_cnn.ckpt')
+# model.load_state_dict(torch.load('model_cnn.ckpt'))
 batch_fgsm_attack(model, batch_size, test_loader, eps=fgsm_eps, save_imgs=save_imgs, save_dir='imgs/imgs_cnn')
 
 # MLP
 model = MLP300K()
-# mnist_train_model(model, train_loader, test_loader, num_epochs=50, lr=0.003, save_path='model_mlp.ckpt')
-model.load_state_dict(torch.load('model_mlp.ckpt'))
+mnist_train_model(model, train_loader, test_loader, num_epochs=50, lr=0.003, save_path='model_mlp.ckpt')
+# model.load_state_dict(torch.load('model_mlp.ckpt'))
 batch_fgsm_attack(model, batch_size, test_loader, eps=fgsm_eps, save_imgs=save_imgs, save_dir='imgs/imgs_mlp')
