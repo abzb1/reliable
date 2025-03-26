@@ -11,6 +11,12 @@
 
 ### Attack Success Rate for Test set
 
+Observation of FGSM success rates on models with similar parameter sizes and comparable accuracies reveals structural characteristics.
+Although it was expected that ViT would be more robust to FGSM attacks due to its ability to capture global features, the results show that at larger epsilon values (≥ 7e-3), ViT is actually more vulnerable than CNN.
+However, at smaller epsilon values, ViT exhibits lower attack success rates compared to CNN, aligning with the intuition that it is more robust to small perturbations.
+
+![FGSM Attack Success Rate vs  Epsilon](https://github.com/user-attachments/assets/58eae6b7-a9ba-46d0-aba6-387d3db004da)
+
 | fgsm_eps | ViT   | CNN   | MLP   |
 |----------|-------|-------|-------|
 | 2e-2     | 0.94% | 0.55% | 2.07% |
