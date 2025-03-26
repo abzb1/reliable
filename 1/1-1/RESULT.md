@@ -1,6 +1,18 @@
-## FGSM Attack Results (model params ≈ 300K)
+## FGSM Attack Results on MNIST Dataset
 
-### Test set Accuracy After Training
+#### Usage
+
+Need python >= 3.10.   
+Need more than 23000MiB VRAM.   
+It takes about 10~20 minutes to train.
+
+```bash
+pip install -r requirements.txt
+python test.py
+```
+
+### Test set Accuracy After Training (model params ≈ 300K)
+
 | Model | Accuracy |
 |-------|----------|
 | ViT   | 97.20%   |

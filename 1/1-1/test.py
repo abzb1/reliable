@@ -107,7 +107,7 @@ batch_size = 8192
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
 
-fgsm_eps = 0
+fgsm_eps = 7e-3
 save_imgs = True
 
 # ViT
