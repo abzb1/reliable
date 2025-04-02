@@ -110,8 +110,8 @@ train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=
 test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
 
 pgd_eps = 3e-2
-pgd_alpha = 1e-3
-pgd_iters = 100
+pgd_alpha = 1e-2
+pgd_iters = 500
 save_imgs = False
 
 # MLP
