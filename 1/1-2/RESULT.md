@@ -17,6 +17,8 @@ python test.py
 
 ### Attack Success Rate for Test set
 
+![image](https://github.com/user-attachments/assets/3c427559-a200-4b9c-84ea-def371466768)
+
 | fgsm_eps |  MLP   |
 |----------|--------|
 | 3e-2     | 30.22% |
