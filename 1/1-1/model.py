@@ -8,9 +8,9 @@ class PatchEmbedding(nn.Module):
         self.proj = nn.Conv2d(in_ch, embed_dim, kernel_size=patch_size, stride=patch_size)
 
     def forward(self, x):
-        x = self.proj(x)  # (B, embed_dim, H/patch, W/patch)
-        x = x.flatten(2)  # (B, embed_dim, num_patches)
-        x = x.transpose(1, 2)  # (B, num_patches, embed_dim)
+        x = self.proj(x)
+        x = x.flatten(2)
+        x = x.transpose(1, 2)
         return x
 
 class MLP(nn.Module):
@@ -85,17 +85,17 @@ class CNN_300K(nn.Module):
     def __init__(self, num_classes=10):
         super(CNN_300K, self).__init__()
         self.features = nn.Sequential(
-            nn.Conv2d(1, 64, kernel_size=3, padding=1),  # (B, 64, 28, 28)
+            nn.Conv2d(1, 64, kernel_size=3, padding=1),
             nn.ReLU(),
-            nn.MaxPool2d(2),                             # (B, 64, 14, 14)
+            nn.MaxPool2d(2),
 
-            nn.Conv2d(64, 128, kernel_size=3, padding=1), # (B, 128, 14, 14)
+            nn.Conv2d(64, 128, kernel_size=3, padding=1),
             nn.ReLU(),
-            nn.MaxPool2d(2),                              # (B, 128, 7, 7)
+            nn.MaxPool2d(2),
 
-            nn.Conv2d(128, 256, kernel_size=3, padding=1), # (B, 256, 7, 7)
+            nn.Conv2d(128, 256, kernel_size=3, padding=1),
             nn.ReLU(),
-            nn.AdaptiveAvgPool2d((1, 1))                  # (B, 256, 1, 1)
+            nn.AdaptiveAvgPool2d((1, 1))
         )
         self.classifier = nn.Sequential(
             nn.Linear(256, 128),
@@ -114,7 +114,7 @@ class MLP300K(nn.Module):
         super().__init__()
         self.model = nn.Sequential(
             nn.Flatten(),
-            nn.Linear(784, 377),  # 입력: 784, 히든: 377
+            nn.Linear(784, 377),
             nn.ReLU(),
             nn.Linear(377, 10)
         )
