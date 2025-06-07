@@ -62,7 +62,7 @@ RMSE 를 사용했고, 100 epoch 학습에서 최종 학습로스 5.502e-03 를 
 
 Marabou 활용을 위해 onnx 형식으로 저장하였다.
 
-detail 은 [코드](reliable/3/make_my_model.py) 에서 확인할 수 있다.
+detail 은 [reliable/3/make_my_model.py](https://github.com/abzb1/reliable/blob/main/3/make_my_model.py) 에서 확인할 수 있다.
 
 ### 2. Marabou 사용한 모델 검증
 
@@ -75,4 +75,4 @@ Marabou 저장소의 [예시 코드](https://github.com/NeuralNetworkVerificatio
 x 에 대해 값의 범위를 [0, 20,000] 까지 늘렸을 때, output 의 LowerBound 가 여전히 40000+2.0+(1e-5) 에서 unsat 됨을 확인했다.
 x 값의 범위를 [-20,000, 0] 까지 늘렸을 때도, output 의 UpperBound 가 -40000-(1e-5) 에서 unsat 됨을 확인했다.
 
-detail 은 [코드](reliable/3/validation_with_marabou.py) 에서 확인할 수 있다.
+detail 은 [reliable/3/validation_with_marabou.py](https://github.com/abzb1/reliable/blob/main/3/validation_with_marabou.py) 에서 확인할 수 있다.
