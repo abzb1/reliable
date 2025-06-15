@@ -20,6 +20,8 @@ python alpha-beta-CROWN/complete_verifier/abcrown.py \
 
 ### Result
 
+검증기 abcrown.py가 ResNet-18 (CIFAR-10) 모델을 L∞-공격 반경 ε = 2 / 255(0.007843)로 100 개의 테스트 샘플에 대해 돌린 결과
+
 ```
 Checking and Saving Counterexample in check_and_save_cex
 
@@ -34,6 +36,12 @@ mean time for verified UNSAFE instances (total 99): 0.11198827232977357, max tim
 unsafe-pgd (total 99), index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
 unknown (total 1), index: [81]
 ```
+
+사전 단계로 실행된 PGD 공격이 99 개의 반례를 즉시 찾아냈으므로 이들 샘플은 unsafe-pgd(공격으로 반례가 발견됨)로 분류되었고, 분기-한계(BaB) 탐색은 수행되지 않았음
+나머지 1 개(인덱스 81)는 설정-상 타임아웃(120 초)을 넘겨 unknown 으로 남음
+최종 검증 정확도(robust verified accuracy)는 0 %, 안전(unsat)으로 증명된 샘플은 없음
+
+굉장히 쉽게 깨진 모델이었다.
 
 ### α,β-CROWN
 
