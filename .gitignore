@@ -4,3 +4,5 @@
 **/data
 **/*.ckpt
 **/imgs
+**/*.pth
+**/*.onnx
