@@ -1,0 +1,7 @@
+pillow
+tqdm
+numpy
+datasets
+transformers
+torch
+bitsandbytes
